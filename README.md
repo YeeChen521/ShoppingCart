@@ -1,33 +1,74 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Shopping Cart Application
+This is a simple shopping cart application built with React. It allows users to browse products, add them to their cart, and manage their cart items.
 
 ## Folder structure
-|- src
-    |- assets
-        |welcome.jpg
-    |- component
-        |- NavBar.jsx
-        |- User.jsx // for the authentication
-        |- Shop.jsx // show shop page ,cart , quantity adjiustment and price
-        |- Homepage.jsx // show some welcome content and new arrival
-        |- Categories.jsx // group products by category
-        |- ProductCard.jsx //display product info, has quantity input, increment/decrement
-        |- login.jsx // for the authentication
-    |- context
-        |- CardContext.jsx // hold the cart item , addtocard...
-    |- util
-        |- api.js
-    |- App.css
-    |- App.jsx
-    |- index.css
-    |- main.jsx
+```
+src/
+├── assets/
+│   └── welcome.jpg
+│
+├── component/
+│   ├── NavBar.jsx        # Navigation bar
+│   ├── User.jsx          # Authentication
+│   ├── Shop.jsx          # Shop page, cart, quantity adjustment, price
+│   ├── Homepage.jsx      # Welcome content and new arrivals
+│   ├── Categories.jsx    # Group products by category
+│   ├── ProductCard.jsx   # Display product info, with quantity increment/decrement
+│   └── login.jsx         # Authentication
+│
+├── context/
+│   └── CartContext.jsx   # Holds cart items, addToCart, etc.
+│
+├── util/
+│   └── api.js            # API utilities
+│
+├── App.css
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+## Features
+- Browse products by category
+- Add products to the cart
+- Adjust product quantities in the cart
+- View total price of items in the cart
+
+## Technologies Used
+- React
+- React Context API for state management
+- CSS for styling
+- Fetch API for data retrieval
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YeeChen521/ShoppingCart
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd shopping-cart-app
+    ```
+3. Install dependencies:
+    ```bash 
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm start
+    ```
+5. Open your browser and go to `http://localhost:3000` to view the application.
+
+## Usage
+- Browse through the products on the homepage.
+- Click on a product to view its details and add it to your cart.
+- Adjust the quantity of items in your cart as needed.
+- View the total price of items in your cart.
+- Proceed to checkout when ready.
+
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+This project is licensed under the MIT License.
+
+

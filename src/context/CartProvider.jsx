@@ -7,24 +7,20 @@ const CartProvider = ({children}) => {
         return storedCart ? JSON.parse(storedCart) : [];
     });
 
-    // save to localStorage when cartItems change
     useEffect(() => {
         localStorage.setItem("cartItems",JSON.stringify(cartItems));
     },[cartItems]);
 
-    // add item in a cart
     const addCart = (product, qty) => {
-        // More robust price cleaning
         let cleanPrice;
         if (typeof product.price === "number" && !isNaN(product.price)) {
             cleanPrice = product.price;
         } else if (typeof product.price === "string") {
             cleanPrice = Number(product.price.replace(/[^0-9.-]+/g, ""));
         } else {
-            cleanPrice = 0; // fallback for null/undefined prices
+            cleanPrice = 0; 
         }
 
-        // Ensure we have a valid number
         if (isNaN(cleanPrice)) {
             cleanPrice = 0;
         }
@@ -45,13 +41,10 @@ const CartProvider = ({children}) => {
         });
     };
 
-
-    // update quantity of an item in the cart
     const updateQty = (productId,newQty) => {
         setCartItems(prevItems => prevItems.map(item => item.id === productId ? {...item,qty:newQty} : item).filter (item => item.qty > 0));
     };
 
-    // remove an item 
     const removeCart = (productId) => {
         setCartItems(prevItems => prevItems.filter(item => item.id != productId));
     };
